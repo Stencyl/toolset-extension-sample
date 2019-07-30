@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 
 import stencyl.sw.ext.GameExtension;
 import stencyl.sw.ext.OptionsPanel;
+import stencyl.sw.util.WorkerPriorityQueue;
 
 public class SampleGameExtension extends GameExtension
 {
@@ -110,7 +111,7 @@ public class SampleGameExtension extends GameExtension
 	 * this extension has been increased since the game was last opened.
 	 */
 	@Override
-	public void updateFromVersion(int version)
+	public void updateFromVersion(int version, WorkerPriorityQueue worker)
 	{
 		log.info("SampleExtension : Updating from version " + version + " for Game " + getGame().getName());
 	}
