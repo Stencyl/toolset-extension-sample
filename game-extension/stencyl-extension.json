@@ -1,0 +1,28 @@
+{
+  "group": "com.example",
+  "id": "example.game",
+  "name": "My Game Extension",
+  "description": "My Game Extension Description.",
+  "tags": ["example"],
+  "type": "game",
+  "author": "Justin",
+  "website": "https://example.com/",
+  "repository": "https://www.example.com/repo",
+  "target": "stencyl-4.2.0",
+  "version": "1.0.0",
+
+  "icon": "icon.png",
+
+  "toolset": {
+    "root": "toolset",
+    "mainClass": "com.example.SampleGameExtension",
+    "dependencies": [
+      "platform:ch.qos.reload4j:reload4j"
+    ],
+    "internalVersion": "1"
+  },
+
+  "engine": {
+    "root": "engine"
+  }
+}

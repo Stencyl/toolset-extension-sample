@@ -1,0 +1,21 @@
+{
+  "group": "com.example",
+  "id": "example.app",
+  "name": "My App Extension",
+  "description": "My App Extension Description.",
+  "tags": ["example"],
+  "type": "normal",
+  "author": "Justin",
+  "website": "https://example.com/",
+  "repository": "https://www.example.com/repo",
+  "target": "stencyl-4.2.0",
+  "version": "1.0.0",
+
+  "icon": "icon.png",
+
+  "toolset": {
+    "root": "toolset",
+    "mainClass": "com.example.SampleExtension",
+    "internalVersion": "1"
+  }
+}

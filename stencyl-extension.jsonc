@@ -1,0 +1,88 @@
+{
+  "group": "com.example",
+  
+  // A unique identifier for this extension
+  "id": "my-extension",
+
+  // Name, description, author, website, icon, used in extension listings and other UIs
+  "name": "My Extension",
+  "description": "An Example Extension",
+  "author": "Justin",
+  "website": "https://www.example.com/",
+  "icon": "icon.png",
+
+  // Tags are used for categorizing and filtering extensions
+  "tags": ["ads", "graphics", "ui", "sound"],
+  
+  // Type is either "normal" or "game".
+  // - A "normal" extension is loaded for the whole toolset.
+  // - A "game" extension is loaded on a per-project basis,
+  //   only for projects that have explicitly enabled it.
+  // If "game" is specified, the extension may also include
+  // an engine component below.
+  "type": "game",
+
+  // An extension may declare which repository it belongs to,
+  // for the purpose of checking for updates or loading
+  // other necessary extensions from the same repository.
+  "repository": "https://www.example.com/repo",
+
+  // The target Stencyl version. Older versions of Stencyl will
+  // not be able to load this extension.
+  "target": "stencyl-4.2.0",
+
+  // The version of this extension.
+  "version": "1.0.0",
+
+  // Dependencies on other extensions may be declared. If the other
+  // extension is not available or not loaded, this extension won't
+  // load either. When updating this extension from a repository,
+  // dependencies will also be updated if needed.
+  "dependencies": "engine-com.example.utils-1.0.0",
+
+  "toolset": {
+    
+    // The root folder for toolset extension data.
+    "root": "toolset",
+    
+    // Source folders.
+    // The conventional default source folders are automatically included:
+    // {root}/src/main/java
+    // {root}/src/main/resources
+    "src": [
+      {"type": "java", "path": "src"},
+      {"type": "res", "path": "res", "target": "res/com/example/myextension"}
+    ],
+    
+    //Dependencies will be added to the classpath when compiling this extension.
+    //platform:{group}:{artifact}        uses dependencies that are included with the targeted Stencyl version
+    //extension:{id}                     adds an extension specified as a general dependency above
+    //maven:{group}:{artifact}:{version} adds a jar downloaded from maven central
+    //file:{path}                        adds a jar included with this extension
+    //The core Stencyl jar files are always added to the classpath
+    "dependencies": [
+      "platform:com.stencyl:jide-oss",
+      "platform:org.apache.commons:commons-lang3",
+      "platform:ch.qos.reload4j:reload4j",
+      "platform:commons-io:commons-io",
+      "extension:com.example.utils"
+    ],
+    
+    //The main class
+    //For a "normal" extension, this must be a subclass of AppExtension
+    //For a "game" extension, this must be a subclass of GameExtension
+    "mainClass": "com.example.myextension.MyExtension",
+    
+    //An internal version. If this is changed, the extension format update method will be called before
+    //extensions are loaded.
+    "internalVersion": "6"
+  },
+
+  "engine": {
+    //The root folder for engine extension data.
+    "root": "engine",
+    //What platforms this extension is compatible with.
+    //"all", "flash", "html5", "desktop", "mobile", "ios", "android"
+    "compatibility": "all"
+  }
+}
